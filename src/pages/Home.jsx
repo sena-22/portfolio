@@ -55,11 +55,11 @@ const Article = styled.article`
   :hover h1{
     top:-75px;
     opacity: 1;
-    text-shadow: 0 0 10px aqua;
+    text-shadow: 3px 3px 15px  #BB88ED;
 
     &::after {
-      background: aqua;
-      box-shadow: 0 0 10px aqua;
+      background: #BB88ED;
+      box-shadow: 3px 3px 15px  #BB88ED;
       transform: translate(0, 0);
     }
 }
@@ -109,9 +109,14 @@ const Article = styled.article`
   }
 
   &.box1 .inner > div .inner__meta p {
-    font-size:20px;
+    font-size:25px;
     margin-bottom: 50px;
   }
+
+   &.box1 .inner:hover > div .inner__meta h2,
+   &.box1 .inner:hover > div .inner__meta p {
+    text-shadow:  3px 3px 10px  #BB88ED;
+   }
 
   &.box1 .inner > div .inner__link  {
     position:absolute;
@@ -127,7 +132,7 @@ const Article = styled.article`
 
     &:hover {
       font-size:33px;
-      color:#b8c1ec;
+      color:#BB88ED;
     }
   }
   `
