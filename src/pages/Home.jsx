@@ -123,19 +123,18 @@ const Article = styled.article`
 
   &.box1 .inner > div .inner__link  {
     position:absolute;
-    top:90%;
-    left:70%;
+    top:4%;
+    left:75%;
   }
 
   &.box1 .inner > div .inner__link .inner__link__icon {
-    font-size: 30px;
+    font-size: 28px;
     margin-bottom: 30px;
     margin-left: 30px;
     transition: all 0.5s;
 
     &:hover {
       font-size:33px;
-      color:#BB88ED;
     }
   }
   `
