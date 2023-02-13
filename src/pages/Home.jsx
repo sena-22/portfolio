@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faBlog } from "@fortawesome/free-solid-svg-icons";
+
+import moon from '../img/moon.png';
+
 const Main = styled.main`
   width: 100%;
   height: 100%;
@@ -22,7 +28,6 @@ const Article = styled.article`
   position:absolute;
   top:0px;
   left:0px;
-      z-index: 2;
 
   h1 {
     position:absolute;
@@ -37,10 +42,8 @@ const Article = styled.article`
       height: 3px;
       position: absolute;
       left: 0;
-      background-color: transparent;
       transition: all 0.25s;
       content: "";
-      z-index:1;
     }
 
     &::after {
@@ -49,16 +52,16 @@ const Article = styled.article`
     }
   }
 
-:hover h1{
-  color: #fff;
-     top:-75px;
-         opacity: 1;
+  :hover h1{
+    top:-75px;
+    opacity: 1;
+    text-shadow: 0 0 10px aqua;
 
-  &::before,
-  &::after {
-    background: pink;
-    transform: translate(0, 0);
-  }
+    &::after {
+      background: aqua;
+      box-shadow: 0 0 10px aqua;
+      transform: translate(0, 0);
+    }
 }
 
   .inner {
@@ -78,13 +81,56 @@ const Article = styled.article`
     overflow: hidden;
     cursor: pointer;
     transition:all 0.5s;
+
     :hover {
       background: rgba(255,255,255,0.15);
       transform: scale(1.03);
       opacity: 1;
     }
   }
-`
+
+  /* box1 */
+   &.box1 .inner > div .inner__meta {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+   }
+
+  &.box1 .inner > div img {
+    width:300px;
+    height:300px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+  
+  &.box1 .inner > div h2 {
+    font-size:40px;
+    margin-bottom: 10px;
+  }
+
+  &.box1 .inner > div .inner__meta p {
+    font-size:20px;
+    margin-bottom: 50px;
+  }
+
+  &.box1 .inner > div .inner__link  {
+    position:absolute;
+    top:90%;
+    left:70%;
+  }
+
+  &.box1 .inner > div .inner__link .inner__link__icon {
+    font-size: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+    transition: all 0.5s;
+
+    &:hover {
+      font-size:33px;
+      color:#b8c1ec;
+    }
+  }
+  `
 const Home = () => {
   return (
     <>
@@ -93,10 +139,24 @@ const Home = () => {
           <Article className="box1">
             <h1>Profile</h1>
             <div className="inner">
-              <div></div>
+              <div>
+                <div className="inner__meta">
+                  <img src={moon} alt="profile_image"/>
+                  <h2>김현정</h2>
+                  <p>Frontend Developer</p>
+                </div>
+                <div className="inner__link">
+                  <span className="inner__link__icon">
+                    <FontAwesomeIcon icon={faGithub} />
+                  </span>
+                  <span className="inner__link__icon">
+                    <FontAwesomeIcon icon={faBlog} />
+                  </span>
+              </div>
+              </div>
             </div>
           </Article>
-          <Article className="box2">
+          {/* <Article className="box2">
             <h1>Stack</h1>
             <div className="inner">
               <div></div>
@@ -113,7 +173,7 @@ const Home = () => {
             <div className="inner">
               <div></div>
             </div>
-          </Article>
+          </Article> */}
         </Section>
       </Main>
 
