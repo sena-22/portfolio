@@ -33,9 +33,10 @@ const Article = styled.article`
     position:absolute;
     left:0px;
     top:0px;
-    font-size: 30px;
+    font-size: 35px;
     transition: all 0.5s;
     opacity: 0;
+        font-family: 'IM_Hyemin-Bold';
 
     &::after {
       width: 100%;
@@ -106,16 +107,18 @@ const Article = styled.article`
   &.box1 .inner > div h2 {
     font-size:40px;
     margin-bottom: 10px;
+    font-family: 'IM_Hyemin-Bold';
   }
 
   &.box1 .inner > div .inner__meta p {
-    font-size:25px;
+    font-size:35px;
     margin-bottom: 50px;
+    font-family: 'Poor Story',cursive;
   }
 
    &.box1 .inner:hover > div .inner__meta h2,
    &.box1 .inner:hover > div .inner__meta p {
-    text-shadow:  3px 3px 10px  #BB88ED;
+    text-shadow:  0 0 10px  #BB88ED;
    }
 
   &.box1 .inner > div .inner__link  {

@@ -1,3 +1,20 @@
+@font-face {
+  font-family: 'NanumBarunpen';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* font-family: poor-story */
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Poor+Story&display=swap');
+
+@font-face {
+  font-family: 'IM_Hyemin-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/IM_Hyemin-Bold.woff2') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -23,3 +40,4 @@ body {
   letter-spacing: 1px;
   color: #ddd;
 }
+
