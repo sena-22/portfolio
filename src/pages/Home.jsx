@@ -4,6 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faBlog } from "@fortawesome/free-solid-svg-icons";
 
+import { faReact } from "@fortawesome/free-brands-svg-icons"
+import { faSquareJs } from "@fortawesome/free-brands-svg-icons";
+import { faCss3 } from "@fortawesome/free-brands-svg-icons";
+import { faHtml5 } from "@fortawesome/free-brands-svg-icons";
+
 import moon from '../img/moon.png';
 
 const Main = styled.main`
@@ -36,7 +41,7 @@ const Article = styled.article`
     font-size: 35px;
     transition: all 0.5s;
     opacity: 0;
-        font-family: 'IM_Hyemin-Bold';
+    font-family: 'IM_Hyemin-Bold';
 
     &::after {
       width: 100%;
@@ -88,6 +93,7 @@ const Article = styled.article`
       transform: scale(1.03);
       opacity: 1;
     }
+
   }
 
   /* box1 */
@@ -137,13 +143,58 @@ const Article = styled.article`
       font-size:33px;
     }
   }
+
+  /* box2 */
+
+  &.box2 .inner > div {
+    width:100%;
+    height:185px;
+    margin-bottom: 20px;
+
+    &:hover h2, &:hover span {
+      text-shadow: 5px 0px 20px #BB88ED;
+      transition:all 1.5s;
+      color:#BB88ED;
+    }
+  }
+
+   &.box2 .inner > div span > * {
+    width:15%;
+    height:100%;
+    border-right: 1px solid #bbb;
+    float: left;
+    color:#fff;
+    position: relative;
+    box-sizing: border-box;
+    padding-right: 25px;
+   }
+
+   &.box2 .inner > div .con {
+      width:85%;
+      height:100%;
+      box-sizing:border-box;
+      padding-left: 40px;
+      float: right;
+      font-family: 'IM_Hyemin-Bold';
+   }
+
+     &.box2 .inner > div .con p{
+     font-size:20px;
+     font-family: 'IM_Hyemin-Bold';
+     color:#999;
+     back
+    }
+
+
+
   `
+
 const Home = () => {
   return (
     <>
       <Main>
         <Section>
-          <Article className="box1">
+          {/* <Article className="box1">
             <h1>Profile</h1>
             <div className="inner">
               <div>
@@ -162,14 +213,50 @@ const Home = () => {
               </div>
               </div>
             </div>
-          </Article>
-          {/* <Article className="box2">
+          </Article> */}
+          <Article className="box2">
             <h1>Stack</h1>
             <div className="inner">
-              <div></div>
+              <div>
+                <span>
+                  <FontAwesomeIcon icon={faReact}/>
+                </span>
+                <div className="con">
+                  <h2>React</h2>
+                  <p>React 라이브러리를 이용한 개인 프로젝트 및 팀 프로젝트 진행</p>
+                </div>
+              </div>
+                  <div>
+                <span>
+                  <FontAwesomeIcon icon={faSquareJs}/>
+                </span>
+                <div className="con">
+                  <h2>Javascript</h2>
+                  <p>ES6+ 기반으로 학습</p>
+                </div>
+              </div>
+                  <div>
+                <span>
+                  <FontAwesomeIcon icon={faHtml5}/>
+                </span>
+                <div className="con">
+                  <h2>HTML</h2>
+                  <p>HTML의 기본 문법 학습 및 활용 경험</p>
+                </div>
+              </div>
+               <div>
+                <span>
+                  <FontAwesomeIcon icon={faCss3}/>
+                </span>
+                <div className="con">
+                  <h2>CSS</h2>
+                  <p>CSS 및 styled-components를 이용한</p>
+                  <p> 스타일 적용 경험</p>
+                </div>
+              </div>
             </div>
           </Article>
-          <Article claclassNamess="box3">
+          {/* <Article claclassNamess="box3">
             <h1>Project</h1>
             <div className="inner">
               <div></div>
