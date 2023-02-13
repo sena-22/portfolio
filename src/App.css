@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  outline: 0;
+  text-decoration: none;
+}
+
+img {
+  border: 0;
+}
+
+body {
+  font: 17px/1.4 "orbitron";
+  /* line-height: 폰트 크기의 1.4배*/
+  letter-spacing: 1px;
+  color: #ddd;
+}
