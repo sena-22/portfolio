@@ -16,7 +16,7 @@ import cuteBird from "../img/cute_bird.png";
 const Main = styled.main`
   width: 100%;
   height: 100%;
-  perspective: 1300px;
+  perspective: 1200px;
   background-color: #1d1d1d;
   position: fixed;
 `;
@@ -28,7 +28,39 @@ const Section = styled.section`
   left: 50%;
   margin-top: -400px;
   margin-left: -300px;
+  transform-style: preserve-3d;
+  animation: ani 10s infinite;
+
+  /* 3d layout */
+  .box1 {
+    transform: rotateY(20deg) translateZ(-764px);
+  }
+  .box2 {
+    transform: rotateY(65deg) translateZ(-764px);
+  }
+  .box3 {
+    transform: rotateY(-25deg) translateZ(-764px);
+  }
+  .box4 {
+    transform: rotateY(-70deg) translateZ(-764px);
+  }
+
+  @keyframes ani {
+    0% {
+      transform: rotateY(0deg);
+    }
+    25% {
+      transform: rotateY(20deg);
+    }
+    75% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(-20deg);
+    }
+  }
 `;
+
 const Article = styled.article`
   width: 100%;
   height: 100%;
@@ -419,8 +451,13 @@ const Home = () => {
           <Article className="box2">
             <h1>Stack</h1>
             <div className="inner">
-              {box2contents.map((con) => (
-                <Box2 icon={con.icon} title={con.title} con={con.con} />
+              {box2contents.map((con, idx) => (
+                <Box2
+                  key={idx}
+                  icon={con.icon}
+                  title={con.title}
+                  con={con.con}
+                />
               ))}
             </div>
           </Article>
