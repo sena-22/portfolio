@@ -470,7 +470,6 @@ const Home = () => {
   };
 
   const handleOpenLink = (url) => {
-    console.log(url);
     window.location.href = url;
   };
 
