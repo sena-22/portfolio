@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { useNavigate } from "react-router-dom";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faBlog, faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -36,6 +38,10 @@ const Section = styled.section`
   margin-left: -300px;
   transform-style: preserve-3d;
   animation: ani linear 15s infinite;
+
+  &:hover {
+    animation-play-state: paused;
+  }
 
   /* 3d layout */
   .box1 {
@@ -150,7 +156,7 @@ const Article = styled.article`
     width: 300px;
     height: 300px;
     margin-top: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
   }
 
   &.box1 .inner > div h2 {
@@ -354,6 +360,7 @@ const Article = styled.article`
 `;
 
 const Home = () => {
+  const navigate = useNavigate();
   const Box2 = (props) => {
     return (
       <div>
@@ -395,26 +402,44 @@ const Home = () => {
     {
       src: moon,
       title: "Front-line Developer",
-      con: "미니 프로젝트로 개발한 포트폴리오 페이지입니다.",
+      con: "미니 프로젝트로 개발한 포트폴리오 페이지",
       date: "2023-02 (1인/1주)",
     },
     {
       src: cuteBird,
       title: "Treedom",
-      con: "여행 일정 기록 & 공유 서비스입니다.",
+      con: "여행 일정 기록 & 공유 서비스",
       date: "2023-1 ~ 2023-2 (7인/4주)",
     },
     {
       src: stackOverflow,
       title: "Stack Overflow",
-      con: "Stack Overflow 클론 코딩 프로젝트입니다.",
+      con: "Stack Overflow 클론 코딩 프로젝트",
       date: "2023-02 (6인/2주)",
+    },
+  ];
+
+  const box4contents = [
+    {
+      icon: faEnvelope,
+      title: "Contact Me",
+      nav: "contact",
+    },
+    {
+      icon: faGithub,
+      title: "Github",
+      url: "https://github.com/sena-22",
+    },
+    {
+      icon: faBlog,
+      title: "Blog",
+      url: "https://sena-22.github.io/",
     },
   ];
 
   const Box3 = (props) => {
     return (
-      <div>
+      <div onClick={() => handleNavigate(`/project/${props.idx}`)}>
         <img className="pic" src={props.src} />
         <div className="con">
           <h2>{props.title}</h2>
@@ -427,19 +452,34 @@ const Home = () => {
 
   const Box4 = (props) => {
     return (
-      <div>
+      <div
+        onClick={() =>
+          props.nav
+            ? handleNavigate(`/${props.nav}`)
+            : handleOpenLink(props.url)
+        }
+      >
         <FontAwesomeIcon className="icon" icon={props.icon} />
         <h2>{props.title}</h2>
       </div>
     );
   };
 
+  const handleNavigate = (nav) => {
+    navigate(nav);
+  };
+
+  const handleOpenLink = (url) => {
+    console.log(url);
+    window.location.href = url;
+  };
+
   return (
     <>
       <Main>
         <img src={star} />
-        <Section>
-          <Article className="box1">
+        <Section className="section">
+          <Article className="box1" onClick={() => navigate(`/about`)}>
             <h1>Profile</h1>
             <div className="inner">
               <div>
@@ -482,6 +522,7 @@ const Home = () => {
                   title={con.title}
                   con={con.con}
                   date={con.date}
+                  idx={idx}
                 />
               ))}
             </div>
@@ -489,9 +530,15 @@ const Home = () => {
           <Article className="box4">
             <h1>Contact</h1>
             <div className="inner">
-              <Box4 icon={faEnvelope} title={"Contact Me"} />
-              <Box4 icon={faGithub} title={"Github"} />
-              <Box4 icon={faBlog} title={"Blog"} />
+              {box4contents.map((con, idx) => (
+                <Box4
+                  key={idx}
+                  icon={con.icon}
+                  title={con.title}
+                  nav={con.nav && con.nav}
+                  url={con.url && con.url}
+                />
+              ))}
             </div>
           </Article>
         </Section>
