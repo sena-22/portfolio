@@ -29,7 +29,7 @@ const Section = styled.section`
   margin-top: -400px;
   margin-left: -300px;
   transform-style: preserve-3d;
-  animation: ani 10s infinite;
+  animation: ani linear 15s infinite;
 
   /* 3d layout */
   .box1 {
@@ -50,13 +50,16 @@ const Section = styled.section`
       transform: rotateY(0deg);
     }
     25% {
-      transform: rotateY(20deg);
+      transform: rotateY(30deg);
     }
-    75% {
+    50% {
       transform: rotateY(0deg);
     }
+    75% {
+      transform: rotateY(-30deg);
+    }
     100% {
-      transform: rotateY(-20deg);
+      transform: rotateY(0deg);
     }
   }
 `;
@@ -67,6 +70,7 @@ const Article = styled.article`
   position: absolute;
   top: 0px;
   left: 0px;
+  backface-visibility: hidden;
 
   h1 {
     position: absolute;
