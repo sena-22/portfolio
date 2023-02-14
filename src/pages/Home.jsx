@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faBlog, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-
 import { faReact } from "@fortawesome/free-brands-svg-icons";
 import { faSquareJs } from "@fortawesome/free-brands-svg-icons";
 import { faCss3 } from "@fortawesome/free-brands-svg-icons";
@@ -12,6 +11,7 @@ import { faHtml5 } from "@fortawesome/free-brands-svg-icons";
 import moon from "../img/moon.png";
 import stackOverflow from "../img/stack-overflow.png";
 import cuteBird from "../img/cute_bird.png";
+import star from "../img/stars.jpg";
 
 const Main = styled.main`
   width: 100%;
@@ -19,6 +19,12 @@ const Main = styled.main`
   perspective: 1200px;
   background-color: #1d1d1d;
   position: fixed;
+
+  > img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+  }
 `;
 const Section = styled.section`
   width: 600px;
@@ -431,6 +437,7 @@ const Home = () => {
   return (
     <>
       <Main>
+        <img src={star} />
         <Section>
           <Article className="box1">
             <h1>Profile</h1>
