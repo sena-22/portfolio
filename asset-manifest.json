@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.f7aa2497.css",
+    "main.js": "/portfolio/static/js/main.8ef4d933.js",
+    "static/media/stars.jpg": "/portfolio/static/media/stars.8048172184ede9b46072.jpg",
+    "static/media/home.mp4": "/portfolio/static/media/home.c1aac454beb103322ea4.mp4",
+    "static/media/user.mov": "/portfolio/static/media/user.58d5d20722e9b03f1c4b.mov",
+    "static/media/user2.mov": "/portfolio/static/media/user2.10e60c70995e0bdfcb91.mov",
+    "static/media/board.mov": "/portfolio/static/media/board.296c34ec3deabff7390c.mov",
+    "static/media/board2.mp4": "/portfolio/static/media/board2.8ff22475d544b5440a10.mp4",
+    "static/media/board3.mp4": "/portfolio/static/media/board3.2bdee6ac299d02cd6850.mp4",
+    "static/media/board4.mp4": "/portfolio/static/media/board4.3ab7c4379355195b85c9.mp4",
+    "static/media/main.mp4": "/portfolio/static/media/main.060bd8c82fecf1bc59fc.mp4",
+    "static/media/del_user.mp4": "/portfolio/static/media/del_user.330b2998912ce73c04aa.mp4",
+    "static/media/add_board.mp4": "/portfolio/static/media/add_board.d807dcc25c474e39ee8b.mp4",
+    "static/media/edit_board.mp4": "/portfolio/static/media/edit_board.13875712c0606cc3cd76.mp4",
+    "static/media/cute_bird.png": "/portfolio/static/media/cute_bird.ae3e72f30863dd0e54e2.png",
+    "static/media/del_board.mp4": "/portfolio/static/media/del_board.46d797e839b62fc819d4.mp4",
+    "static/media/moon.png": "/portfolio/static/media/moon.44df9ee35e1ea70b6640.png",
+    "static/media/like.mp4": "/portfolio/static/media/like.1c1916d94edadab4ede5.mp4",
+    "static/media/stack-overflow.png": "/portfolio/static/media/stack-overflow.579cff432dec19bc3d23.png",
+    "index.html": "/portfolio/index.html",
+    "main.f7aa2497.css.map": "/portfolio/static/css/main.f7aa2497.css.map",
+    "main.8ef4d933.js.map": "/portfolio/static/js/main.8ef4d933.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f7aa2497.css",
+    "static/js/main.8ef4d933.js"
+  ]
+}
