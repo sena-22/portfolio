@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
+import emailjs from "@emailjs/browser";
 
 import Nav from "../components/Nav";
 
@@ -34,7 +35,7 @@ const Main = styled.div`
     width: 50%;
     top: 30%;
     left: 20%;
-    font: bold 15px "IM_Hyemin-Bold";
+    font: bold 20px "IM_Hyemin-Bold";
   }
 
   .input label {
@@ -46,7 +47,7 @@ const Main = styled.div`
     box-sizing: border-box;
     width: 100%;
     padding: 10px;
-    font: bold 13px "IM_Hyemin-Bold";
+    font: bold 18px "IM_Hyemin-Bold";
     background-color: #4d4c4c;
     color: #8d8d8d;
 
@@ -141,10 +142,32 @@ const Contact = () => {
     } else if (message.length < 1) {
       alert("메시지를 입력해주세요");
     } else {
+      const templateParams = {
+        name: name,
+        email: email,
+        subject: subject,
+        message: message,
+      };
+
       if (window.confirm("이메일을 전송하시겠습니까?")) {
-        console.log("전송!");
-        //이메일 전송!
-        onReset();
+        emailjs
+          .send(
+            process.env.REACT_APP_SERVICE_ID,
+            process.env.REACT_APP_TEMPLATE_ID,
+            templateParams,
+            process.env.REACT_APP_PUBLIC_KEY
+          )
+          .then(
+            (res) => {
+              console.log(res.text);
+            },
+            (err) => {
+              console.log(err.text);
+            }
+          )
+          .then(() => {
+            onReset();
+          });
       }
     }
   };
