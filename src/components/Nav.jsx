@@ -24,15 +24,16 @@ const NavList = styled.div`
   text-align: center;
 
   & div {
-    color: #bb88ed;
+    color: #a6a6b2;
     font-size: 25px;
     padding: 10px 0;
     font-family: "poor story";
+    transition: all 0.5s;
 
     cursor: pointer;
 
     :hover {
-      text-shadow: 0 0 13px #bb88ed;
+      color: #9308fd;
     }
   }
 `;
