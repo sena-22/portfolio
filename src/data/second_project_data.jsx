@@ -7,7 +7,7 @@ import {
   board2,
   board3,
   board4,
-} from "../img/project1/index";
+} from "../img/project2/index";
 
 export const secondProjectData = [
   {

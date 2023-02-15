@@ -1,11 +1,16 @@
-import styled from "styled-components";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
+import styled from "styled-components";
+
 import Nav from "../components/Nav";
+
+import { firstProjectData } from "../data/first_project_data";
 import { secondProjectData } from "../data/second_project_data";
 
 const ArticleContainer = styled.div`
   width: 50%;
+  height: ${(props) => props.height || null};
   float: left;
   box-sizing: border-box;
   padding: 12px;
@@ -28,6 +33,7 @@ const Inner = styled.div`
 
   video {
     width: 100%;
+    height: ${(props) => props.height || null};
     box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
   }
 
@@ -48,9 +54,10 @@ const Inner = styled.div`
   }
 `;
 const Article = (props) => {
+  const { id } = useParams();
   return (
-    <ArticleContainer>
-      <Inner>
+    <ArticleContainer height={id === Number(1) ? "75%" : "65%"}>
+      <Inner height={id === Number(1) ? "70%" : "80%"}>
         <video
           src={props.video}
           muted
@@ -70,10 +77,23 @@ const Section = styled.section`
 
 const ProjectList = () => {
   const { id } = useParams();
+  const [currentData, setCurrentData] = useState([]);
+
+  useEffect(() => {
+    // if (id === 0) {
+    //   setCurrentData(thirdProjectData);
+    // } else
+    console.log(typeof id);
+    if (Number(id) === 1) {
+      setCurrentData(secondProjectData);
+    } else if (Number(id) === 2) {
+      setCurrentData(firstProjectData);
+    }
+  }, [id]);
 
   return (
     <Section>
-      {secondProjectData.map((data, idx) => (
+      {currentData?.map((data, idx) => (
         <Article
           key={idx}
           video={data.video}

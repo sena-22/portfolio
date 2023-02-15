@@ -1,10 +1,7 @@
-import home from "./home.mp4";
-import main from "./main.mov";
-import user from "./user.mov";
-import user2 from "./user2.mov";
-import board from "./board.mov";
-import board2 from "./board2.mov";
-import board3 from "./board3.mov";
-import board4 from "./board4.mov";
+import board from "./add_board.mp4";
+import board2 from "./edit_board.mp4";
+import board3 from "./del_board.mp4";
+import user from "./del_user.mp4";
+import like from "./like.mp4";
 
-export { home, main, user, user2, board, board2, board3, board4 };
+export { board, board2, board3, user, like };
