@@ -55,9 +55,10 @@ const Inner = styled.div`
 `;
 const Article = (props) => {
   const { id } = useParams();
+  const projectId = Number(id);
   return (
-    <ArticleContainer height={id === Number(1) ? "75%" : "65%"}>
-      <Inner height={id === Number(1) ? "70%" : "80%"}>
+    <ArticleContainer height={projectId === 1 ? "50%" : "65%"}>
+      <Inner height={projectId === 1 ? "70%" : "80%"}>
         <video
           src={props.video}
           muted
@@ -78,16 +79,16 @@ const Section = styled.section`
 
 const ProjectList = () => {
   const { id } = useParams();
+  const projectId = Number(id);
   const [currentData, setCurrentData] = useState([]);
 
   useEffect(() => {
     // if (id === 0) {
     //   setCurrentData(thirdProjectData);
     // } else
-    console.log(typeof id);
-    if (Number(id) === 1) {
+    if (projectId === 1) {
       setCurrentData(secondProjectData);
-    } else if (Number(id) === 2) {
+    } else if (projectId === 2) {
       setCurrentData(firstProjectData);
     }
   }, [id]);

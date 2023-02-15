@@ -13,7 +13,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   position: fixed;
-  z-index: 5;
 `;
 
 const Logo = styled.img`
