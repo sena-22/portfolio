@@ -124,6 +124,10 @@ const Contact = () => {
 
   const { name, email, subject, message } = inputs;
 
+  //이메일 유효성 검사
+  const emailRegex =
+    /^[0-9a-zA-Z_]{4,}([-_.]?[0-9a-zA-Z])*@[a-zA-Z]{3,}([-_.]?[a-zA-Z])*.[a-zA-Z]{2,}$/i;
+
   const onChange = (e) => {
     const { name, value } = e.target;
     setInputs({
@@ -133,11 +137,14 @@ const Contact = () => {
   };
 
   const onSubmit = () => {
-    //이메일 유효성 검사
-    if (window.confirm("이메일을 전송하시겠습니까?")) {
-      console.log(name);
-      //이메일 전송!
-      onReset();
+    if (!emailRegex.test(email)) {
+      alert("이메일 형식을 확인해주세요");
+    } else {
+      if (window.confirm("이메일을 전송하시겠습니까?")) {
+        console.log("전송!");
+        //이메일 전송!
+        onReset();
+      }
     }
   };
 
