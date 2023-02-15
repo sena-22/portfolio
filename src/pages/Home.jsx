@@ -13,13 +13,12 @@ import { faHtml5 } from "@fortawesome/free-brands-svg-icons";
 import moon from "../img/moon.png";
 import stackOverflow from "../img/stack-overflow.png";
 import cuteBird from "../img/cute_bird.png";
-import star from "../img/stars.jpg";
 
 const Main = styled.main`
   width: 100%;
   height: 100%;
   perspective: 1200px;
-  background-color: #1d1d1d;
+  background: linear-gradient(to top, #1a0a2c 0%, #634184 100%);
   position: fixed;
 
   > img {
@@ -225,13 +224,14 @@ const Article = styled.article`
     box-sizing: border-box;
     padding-left: 40px;
     float: right;
+    font-weight: bold;
     font-family: "IM_Hyemin-Bold";
   }
 
   &.box2 .inner > div .con p {
-    font-size: 20px;
-    font-family: "IM_Hyemin-Bold";
-    color: #999;
+    font: bold 25px "poor story";
+    color: #c2c2c2;
+    overflow-wrap: break-word;
   }
 
   /* box3 */
@@ -264,7 +264,7 @@ const Article = styled.article`
 
   &.box3 .inner > div .con h2 {
     color: #fff;
-    font-family: "IM_Hyemin-Bold";
+    font: bold 30px "IM_Hyemin-Bold";
   }
 
   &.box3 .inner > div:hover .con h2 {
@@ -272,8 +272,8 @@ const Article = styled.article`
   }
 
   &.box3 .inner > div .con p {
-    font: 21px "poor story";
-    color: #ddd;
+    font: bold 27px "poor story";
+    color: #c2c2c2;
     margin-top: 20px;
     overflow-wrap: break-word;
   }
@@ -476,7 +476,6 @@ const Home = () => {
   return (
     <>
       <Main>
-        <img src={star} />
         <Section className="section">
           <Article className="box1" onClick={() => navigate(`/about`)}>
             <h1>Profile</h1>
