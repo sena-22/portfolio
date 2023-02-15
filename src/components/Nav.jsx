@@ -9,7 +9,7 @@ import moon from "../img/moon.png";
 const Container = styled.div`
   width: 200px;
   height: 100%;
-  background-color: #1d1d1d;
+  background-color: #292929;
   display: flex;
   flex-direction: column;
   position: fixed;
