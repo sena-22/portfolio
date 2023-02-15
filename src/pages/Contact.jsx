@@ -139,6 +139,8 @@ const Contact = () => {
   const onSubmit = () => {
     if (!emailRegex.test(email)) {
       alert("이메일 형식을 확인해주세요");
+    } else if (message.length < 1) {
+      alert("메시지를 입력해주세요");
     } else {
       if (window.confirm("이메일을 전송하시겠습니까?")) {
         console.log("전송!");
