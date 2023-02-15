@@ -74,10 +74,10 @@ const Main = styled.div`
     transition: all 0.3s;
   }
 
-  button {
+  .input button {
     position: absolute;
-    top: 80%;
-    left: 55%;
+    top: 100%;
+    left: 85%;
     border: 1px solid #bb88ed;
     padding: 10px;
     width: 15%;
@@ -87,7 +87,6 @@ const Main = styled.div`
     cursor: pointer;
     font: 20px "poor story";
     letter-spacing: 2px;
-    display: block;
 
     :hover {
       background-image: linear-gradient(to left, #a18cd1 0%, #fbc2eb 100%);
@@ -194,10 +193,8 @@ const Contact = () => {
             autoComplete="off"
           ></textarea>
           <span></span>
+          <button onClick={onSubmit}>Send message</button>
         </div>
-        <button type="reset" onClick={onSubmit}>
-          Send message
-        </button>
       </Main>
     </Container>
   );

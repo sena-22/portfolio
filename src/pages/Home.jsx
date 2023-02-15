@@ -440,7 +440,7 @@ const Home = () => {
   const Box3 = (props) => {
     return (
       <div onClick={() => handleNavigate(`/project/${props.idx}`)}>
-        <img className="pic" src={props.src} />
+        <img className="pic" src={props.src} alt={props.title} />
         <div className="con">
           <h2>{props.title}</h2>
           <p>{props.con}</p>
