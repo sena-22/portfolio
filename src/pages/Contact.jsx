@@ -1,4 +1,6 @@
+import { useState, useEffect } from "react";
 import styled from "styled-components";
+
 import Nav from "../components/Nav";
 
 const Container = styled.div`
@@ -19,10 +21,9 @@ const Main = styled.div`
     position: absolute;
     top: 15%;
     left: 20%;
-    color: #fff;
+    color: #bb88ed;
 
     :hover {
-      text-shadow: 0 0 10px #bb88ed;
     }
   }
 
@@ -96,27 +97,98 @@ const Main = styled.div`
   }
 `;
 
+const Input = ({ label, type, name, value, onChange }) => {
+  return (
+    <>
+      <label>{label}</label>
+      <input
+        typeof={type}
+        name={name}
+        value={value}
+        required
+        onChange={onChange}
+        autoComplete="off"
+      ></input>
+      <span></span>
+    </>
+  );
+};
+
 const Contact = () => {
+  const [inputs, setInputs] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const { name, email, subject, message } = inputs;
+
+  const onChange = (e) => {
+    const { name, value } = e.target;
+    setInputs({
+      ...inputs,
+      [name]: value,
+    });
+  };
+
+  const onSubmit = () => {
+    //이메일 유효성 검사
+    if (window.confirm("이메일을 전송하시겠습니까?")) {
+      console.log(name);
+      //이메일 전송!
+      onReset();
+    }
+  };
+
+  const onReset = () => {
+    setInputs({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
+  };
+
   return (
     <Container>
       <Nav />
       <Main>
         <h1>Contact me</h1>
         <div className="input">
-          <label>Name</label>
-          <input typeof="email" required></input>
-          <span></span>
-          <label>Email</label>
-          <input typeof="text"></input>
-          <span></span>
-          <label>Subject</label>
-          <input typeof="text"></input>
-          <span></span>
+          <Input
+            label="Name"
+            type="text"
+            name="name"
+            value={name}
+            onChange={onChange}
+          />
+          <Input
+            label="Email"
+            type="text"
+            name="email"
+            value={email}
+            onChange={onChange}
+          />
+          <Input
+            label="Subject"
+            type="text"
+            name="subject"
+            value={subject}
+            onChange={onChange}
+          />
           <label>Message</label>
-          <textarea></textarea>
+          <textarea
+            name="message"
+            value={message}
+            onChange={onChange}
+            autoComplete="off"
+          ></textarea>
           <span></span>
         </div>
-        <button>Send message</button>
+        <button type="reset" onClick={onSubmit}>
+          Send message
+        </button>
       </Main>
     </Container>
   );
