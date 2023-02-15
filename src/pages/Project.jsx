@@ -73,6 +73,7 @@ const Article = (props) => {
 
 const Section = styled.section`
   width: 100%;
+  margin-left: 200px;
 `;
 
 const ProjectList = () => {

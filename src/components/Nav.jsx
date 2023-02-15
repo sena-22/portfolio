@@ -12,7 +12,8 @@ const Container = styled.div`
   background-color: #1d1d1d;
   display: flex;
   flex-direction: column;
-  position: relative;
+  position: fixed;
+  z-index: 5;
 `;
 
 const Logo = styled.img`
