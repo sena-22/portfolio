@@ -68,6 +68,12 @@ const ModalWrapper = styled.div`
         margin-left: 40px;
         height: 10%;
         color: #393939;
+
+        :nth-of-type(2),
+        :nth-of-type(3) {
+          cursor: pointer;
+          color: #3e3eec;
+        }
       }
     }
   }
@@ -76,7 +82,11 @@ const ModalWrapper = styled.div`
 const Modal = ({ handleModal, currentMetaData }) => {
   const { title, date, description, mainFunction, repository, url, stack } =
     currentMetaData[0];
-  console.log(title);
+
+  const handleOpenLink = (url) => {
+    window.location.href = url;
+  };
+
   return (
     <ModalContainer onClick={handleModal}>
       <ModalWrapper onClick={(e) => e.stopPropagation()}>
@@ -94,8 +104,8 @@ const Modal = ({ handleModal, currentMetaData }) => {
           </div>
           <div className="con_right">
             <p>{mainFunction}</p>
-            <p>{repository}</p>
-            {url && <p>{url}</p>}
+            <p onClick={() => handleOpenLink(repository)}>{repository}</p>
+            {url && <p onClick={() => handleOpenLink(url)}>{url}</p>}
             <p>{stack}</p>
           </div>
         </div>
