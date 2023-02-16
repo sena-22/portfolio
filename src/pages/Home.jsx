@@ -379,12 +379,12 @@ const Home = () => {
     {
       icon: faReact,
       title: "React",
-      con: "React 라이브러리를 이용한 개인 프로젝트 및 팀 프로젝트 진행",
+      con: "React를 이용한 개인 프로젝트 및 팀 프로젝트 진행",
     },
     {
       icon: faSquareJs,
       title: "Javascript",
-      con: "ES6+ 기반으로 학습",
+      con: "ES6+",
     },
     {
       icon: faHtml5,
