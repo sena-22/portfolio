@@ -8,6 +8,7 @@ const Container = styled.div`
   background-color: #292929;
   width: 100%;
   height: 100vh;
+  min-height: 800px;
 `;
 
 const Main = styled.div`
