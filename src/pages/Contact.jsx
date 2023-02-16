@@ -22,10 +22,6 @@ const Main = styled.div`
     position: absolute;
     top: 15%;
     left: 20%;
-    color: #bb88ed;
-
-    :hover {
-    }
   }
 
   .input {
