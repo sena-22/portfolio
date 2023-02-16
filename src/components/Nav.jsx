@@ -70,6 +70,7 @@ const Nav = () => {
       <NavList>
         <div onClick={() => handleNavigate("/")}>Home</div>
         <div onClick={() => handleNavigate("/about")}>About</div>
+        <div onClick={() => handleNavigate("/project/0")}>Project</div>
         <div onClick={() => handleNavigate("/contact")}>Contact</div>
       </NavList>
       <Links>

@@ -116,6 +116,10 @@ const Article = styled.article`
   transition: 0.4s;
   transform-style: preserve-3d;
 
+  &:hover {
+    transform: rotateY(180deg);
+  }
+
   .front,
   .back {
     width: 100%;
@@ -142,10 +146,6 @@ const Article = styled.article`
   }
   .back {
     background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
-    transform: rotateY(180deg);
-  }
-
-  &:hover {
     transform: rotateY(180deg);
   }
 `;
