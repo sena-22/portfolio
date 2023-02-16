@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import styled from "styled-components";
 
@@ -53,6 +53,7 @@ const Inner = styled.div`
     padding: 0 20px;
   }
 `;
+
 const Article = (props) => {
   const { id } = useParams();
   const projectId = Number(id);
@@ -112,13 +113,55 @@ const Container = styled.div`
   flex-direction: row;
   width: 100vw;
   height: 100vh;
+
+  > button {
+    border: none;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    z-index: 5;
+    position: fixed;
+    border-radius: 50%;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+
+    :hover {
+      background-color: #ba88eda4;
+    }
+  }
+  > button:nth-of-type(1) {
+    top: 80%;
+    left: 3%;
+  }
+
+  > button:nth-of-type(2) {
+    top: 80%;
+    left: 7%;
+  }
 `;
 
 const Project = () => {
+  const { id } = useParams();
+  const projectId = Number(id);
+
+  const navigate = useNavigate();
+
+  const handleNavigate = (projectId) => {
+    if (projectId < 0 || projectId > 2) {
+      return;
+    } else {
+      navigate(`/project/${projectId}`);
+    }
+  };
+
   return (
     <Container>
       <Nav />
       <ProjectList />
+      <button onClick={() => handleNavigate(projectId - 1)}>﹤</button>
+      <button onClick={() => handleNavigate(projectId + 1)}>﹥</button>
     </Container>
   );
 };
