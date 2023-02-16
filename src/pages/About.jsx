@@ -1,6 +1,7 @@
 import { TypeAnimation } from "react-type-animation";
 import styled from "styled-components";
 import Nav from "../components/Nav";
+import CodeBlocks from "../components/CodeBlock";
 
 const Container = styled.div`
   background-color: #292929;
@@ -42,11 +43,12 @@ const LeftSection = styled.section`
     }
   }
 
-  p {
+  div:nth-of-type(2) {
     position: absolute;
     top: 25%;
     font: 20px "poor story";
     padding: 20px 0;
+    letter-spacing: 2px;
   }
 `;
 
@@ -76,7 +78,7 @@ const RightSection = styled.section`
     > p {
       font: 40px;
       margin: 15px 0;
-      font: 20px "poor story";
+      font: 25px "poor story";
       text-align: center;
     }
   }
@@ -96,7 +98,7 @@ const RightSection = styled.section`
       > p {
         margin-bottom: 10px;
         text-align: center;
-        font: 20px "poor story";
+        font: 25px "poor story";
       }
 
       > .con {
@@ -177,14 +179,9 @@ const About = () => {
               repeat={Infinity}
             />
           </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-            fugit ut dolorem, hic facilis consectetur? Lorem ipsum dolor sit
-            amet consectetur adipisicing elit. Perferendis fugit ut dolorem, hic
-            facilis consectetur? Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Perferendis fugit ut dolorem, hic facilis
-            consectetur?
-          </p>
+          <div>
+            <CodeBlocks />
+          </div>
         </LeftSection>
         <RightSection>
           <div className="article__top">
