@@ -414,7 +414,7 @@ const Home = () => {
       src: stackOverflow,
       title: "Stack Overflow",
       con: "Stack Overflow 클론 코딩 프로젝트",
-      date: "2023-02 (6인/2주)",
+      date: "2022-12 ~ 2022-12 (6인/2주)",
     },
   ];
 

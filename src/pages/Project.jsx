@@ -4,10 +4,16 @@ import { useParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import Nav from "../components/Nav";
+import Modal from "../components/Modal";
 
 import { firstProjectData } from "../data/first_project_data";
 import { secondProjectData } from "../data/second_project_data";
 import { thirdProjectData } from "../data/third_project_data";
+import {
+  firstMetaData,
+  secondMetaData,
+  thirdMetaData,
+} from "../data/meta_data";
 
 const ArticleContainer = styled.div`
   width: 50%;
@@ -79,21 +85,7 @@ const Section = styled.section`
   margin-left: 200px;
 `;
 
-const ProjectList = () => {
-  const { id } = useParams();
-  const projectId = Number(id);
-  const [currentData, setCurrentData] = useState([]);
-
-  useEffect(() => {
-    if (projectId === 0) {
-      setCurrentData(thirdProjectData);
-    } else if (projectId === 1) {
-      setCurrentData(secondProjectData);
-    } else if (projectId === 2) {
-      setCurrentData(firstProjectData);
-    }
-  }, [id]);
-
+const ProjectList = ({ currentData }) => {
   return (
     <Section>
       {currentData?.map((data, idx) => (
@@ -145,8 +137,24 @@ const Container = styled.div`
 const Project = () => {
   const { id } = useParams();
   const projectId = Number(id);
+  const [currentData, setCurrentData] = useState([]);
+  const [currentMetaData, setCurrentMetaData] = useState([]);
+
+  useEffect(() => {
+    if (projectId === 0) {
+      setCurrentData(thirdProjectData);
+      setCurrentMetaData(thirdMetaData);
+    } else if (projectId === 1) {
+      setCurrentData(secondProjectData);
+      setCurrentMetaData(secondMetaData);
+    } else if (projectId === 2) {
+      setCurrentData(firstProjectData);
+      setCurrentMetaData(firstMetaData);
+    }
+  }, [id]);
 
   const navigate = useNavigate();
+  const [modal, openModal] = useState(false);
 
   const handleNavigate = (projectId) => {
     if (projectId < 0 || projectId > 2) {
@@ -156,12 +164,20 @@ const Project = () => {
     }
   };
 
+  const handleModal = () => {
+    openModal(!modal);
+  };
+
   return (
     <Container>
       <Nav />
-      <ProjectList />
+      <ProjectList currentData={currentData} />
       <button onClick={() => handleNavigate(projectId - 1)}>﹤</button>
       <button onClick={() => handleNavigate(projectId + 1)}>﹥</button>
+      <button onClick={handleModal}>view detail</button>
+      {modal && (
+        <Modal currentMetaData={currentMetaData} handleModal={handleModal} />
+      )}
     </Container>
   );
 };
