@@ -7,6 +7,7 @@ import Nav from "../components/Nav";
 
 import { firstProjectData } from "../data/first_project_data";
 import { secondProjectData } from "../data/second_project_data";
+import { thirdProjectData } from "../data/third_project_data";
 
 const ArticleContainer = styled.div`
   width: 50%;
@@ -84,10 +85,9 @@ const ProjectList = () => {
   const [currentData, setCurrentData] = useState([]);
 
   useEffect(() => {
-    // if (id === 0) {
-    //   setCurrentData(thirdProjectData);
-    // } else
-    if (projectId === 1) {
+    if (projectId === 0) {
+      setCurrentData(thirdProjectData);
+    } else if (projectId === 1) {
       setCurrentData(secondProjectData);
     } else if (projectId === 2) {
       setCurrentData(firstProjectData);
