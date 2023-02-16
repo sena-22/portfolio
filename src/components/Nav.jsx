@@ -19,13 +19,16 @@ const Logo = styled.img`
   width: 70px;
   height: 70px;
   margin: 50px 65px 100px;
+
+  cursor: pointer;
 `;
 const NavList = styled.div`
   text-align: center;
 
   & div {
     color: #a6a6b2;
-    font-size: 25px;
+    font-size: 29px;
+    font-weight: 600;
     padding: 10px 0;
     font-family: "poor story";
     transition: all 0.5s;
@@ -33,7 +36,7 @@ const NavList = styled.div`
     cursor: pointer;
 
     :hover {
-      color: #9308fd;
+      color: #bb88ed;
     }
   }
 `;
@@ -66,7 +69,7 @@ const Nav = () => {
   };
   return (
     <Container>
-      <Logo src={moon} />
+      <Logo src={moon} onClick={() => handleNavigate("/")} />
       <NavList>
         <div onClick={() => handleNavigate("/")}>Home</div>
         <div onClick={() => handleNavigate("/about")}>About</div>
