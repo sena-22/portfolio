@@ -105,6 +105,7 @@ const Container = styled.div`
   flex-direction: row;
   width: 100vw;
   height: 100vh;
+  position: relative;
 
   > button {
     border: none;
@@ -125,12 +126,26 @@ const Container = styled.div`
   }
   > button:nth-of-type(1) {
     top: 80%;
-    left: 3%;
+    left: 40px;
   }
 
   > button:nth-of-type(2) {
     top: 80%;
-    left: 7%;
+    left: 110px;
+  }
+
+  > button:nth-of-type(3) {
+    top: 90%;
+    left: 90%;
+    width: 100px;
+    height: 100px;
+    font: 27px/1 "poor story";
+    background-color: #ba88eda4;
+    border-radius: 50%;
+
+    :hover {
+      background-color: #30004c9f;
+    }
   }
 `;
 
