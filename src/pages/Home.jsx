@@ -274,7 +274,7 @@ const Article = styled.article`
   &.box3 .inner > div .con p {
     font: bold 27px "poor story";
     color: #c2c2c2;
-    margin-top: 20px;
+    margin-top: 22px;
     overflow-wrap: break-word;
   }
 
@@ -282,8 +282,7 @@ const Article = styled.article`
     position: absolute;
     bottom: 50px;
     right: 50px;
-    font: 20px "poor story";
-    color: #bb88ed;
+    font: bold 22px "poor story";
   }
 
   /* box 4*/
