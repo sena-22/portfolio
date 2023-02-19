@@ -6,14 +6,7 @@ import styled from "styled-components";
 import Nav from "../components/Nav";
 import Modal from "../components/Modal";
 
-import { firstProjectData } from "../data/first_project_data";
-import { secondProjectData } from "../data/second_project_data";
-import { thirdProjectData } from "../data/third_project_data";
-import {
-  firstMetaData,
-  secondMetaData,
-  thirdMetaData,
-} from "../data/meta_data";
+import * as D from "../data";
 
 const ArticleContainer = styled.div`
   width: 50%;
@@ -157,14 +150,14 @@ const Project = () => {
 
   useEffect(() => {
     if (projectId === 0) {
-      setCurrentData(thirdProjectData);
-      setCurrentMetaData(thirdMetaData);
+      setCurrentData(D.thirdProjectData);
+      setCurrentMetaData(D.thirdMetaData);
     } else if (projectId === 1) {
-      setCurrentData(secondProjectData);
-      setCurrentMetaData(secondMetaData);
+      setCurrentData(D.secondProjectData);
+      setCurrentMetaData(D.secondMetaData);
     } else if (projectId === 2) {
-      setCurrentData(firstProjectData);
-      setCurrentMetaData(firstMetaData);
+      setCurrentData(D.firstProjectData);
+      setCurrentMetaData(D.firstMetaData);
     }
   }, [id]);
 

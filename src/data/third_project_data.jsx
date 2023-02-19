@@ -1,22 +1,22 @@
-import { main, about, project, contact } from "../img/project3/index";
+import * as V from "../img/project3/index";
 export const thirdProjectData = [
   {
-    video: main,
+    video: V.main,
     title: "main page",
     con: "",
   },
   {
-    video: about,
+    video: V.about,
     title: "about page",
     con: "",
   },
   {
-    video: project,
+    video: V.project,
     title: "project page",
     con: "",
   },
   {
-    video: contact,
+    video: V.contact,
     title: "contact page",
     con: "",
   },
