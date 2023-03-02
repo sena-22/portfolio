@@ -1,91 +1,42 @@
-import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from 'react-router-dom'
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { faBlog } from "@fortawesome/free-solid-svg-icons";
-import moon from "../img/moon.png";
+import * as S from './style'
 
-const Container = styled.div`
-  width: 200px;
-  height: 100%;
-  background-color: #292929;
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-`;
-
-const Logo = styled.img`
-  width: 70px;
-  height: 70px;
-  margin: 50px 65px 100px;
-
-  cursor: pointer;
-`;
-const NavList = styled.div`
-  text-align: center;
-
-  & div {
-    color: #a6a6b2;
-    font-size: 29px;
-    font-weight: 600;
-    padding: 10px 0;
-    font-family: "poor story";
-    transition: all 0.5s;
-
-    cursor: pointer;
-
-    :hover {
-      color: #bb88ed;
-    }
-  }
-`;
-
-const Links = styled.div`
-  position: absolute;
-  top: 90%;
-  left: 15%;
-
-  > span {
-    font-size: 28px;
-    transition: all 0.5s;
-    margin-left: 30px;
-    cursor: pointer;
-    &:hover {
-      font-size: 33px;
-    }
-  }
-`;
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faGithub} from '@fortawesome/free-brands-svg-icons'
+import {faBlog} from '@fortawesome/free-solid-svg-icons'
+import moon from '../img/moon.png'
 
 const Nav = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
 
-  const handleNavigate = (nav) => {
-    navigate(nav);
-  };
+  const handleNavigate = nav => {
+    navigate(nav)
+  }
 
-  const handleOpenLink = (url) => {
-    window.location.href = url;
-  };
+  const handleOpenLink = url => {
+    window.location.href = url
+  }
+
   return (
-    <Container>
-      <Logo src={moon} onClick={() => handleNavigate("/")} />
-      <NavList>
-        <div onClick={() => handleNavigate("/")}>Home</div>
-        <div onClick={() => handleNavigate("/about")}>About</div>
-        <div onClick={() => handleNavigate("/project/0")}>Project</div>
-        <div onClick={() => handleNavigate("/contact")}>Contact</div>
-      </NavList>
-      <Links>
-        <span onClick={() => handleOpenLink("https://github.com/sena-22")}>
+    <S.NavContainer>
+      <S.Logo src={moon} onClick={() => handleNavigate('/')} />
+      <S.NavList>
+        <div onClick={() => handleNavigate('/')}>Home</div>
+        <div onClick={() => handleNavigate('/about')}>About</div>
+        <div onClick={() => handleNavigate('/project/0')}>Project</div>
+        <div onClick={() => handleNavigate('/contact')}>Contact</div>
+      </S.NavList>
+      <S.Links>
+        <span onClick={() => handleOpenLink('https://github.com/sena-22')}>
           <FontAwesomeIcon icon={faGithub} />
         </span>
-        <span onClick={() => handleOpenLink("https://sena-22.github.io/")}>
+        <span onClick={() => handleOpenLink('https://sena-22.github.io/')}>
           <FontAwesomeIcon icon={faBlog} />
         </span>
-      </Links>
-    </Container>
-  );
-};
+      </S.Links>
+    </S.NavContainer>
+  )
+}
 
-export default Nav;
+export default Nav
