@@ -86,7 +86,7 @@ const Contact = () => {
   }
 
   return (
-    <S.ContactContainer>
+    <S.ContactContainer id="contact">
       <S.ContactMain>
         <h1>Contact me</h1>
         <div className="input">

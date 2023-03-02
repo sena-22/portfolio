@@ -3,12 +3,12 @@ import Nav from '../components/Nav'
 
 const Home = () => {
   return (
-    <>
+    <div id="home">
       <Nav />
       <P.About />
       <P.ProjectList />
       <P.Contact />
-    </>
+    </div>
   )
 }
 

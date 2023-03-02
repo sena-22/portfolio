@@ -5,7 +5,7 @@ import * as S from './style'
 
 const About = () => {
   return (
-    <S.AboutContainer>
+    <S.AboutContainer id="about">
       <S.AboutMain>
         <S.AboutLeftSection>
           <h1>ABOUT</h1>

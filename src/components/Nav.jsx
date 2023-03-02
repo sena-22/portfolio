@@ -1,4 +1,5 @@
 import {useNavigate} from 'react-router-dom'
+import {Link} from 'react-scroll'
 
 import * as S from './style'
 
@@ -18,14 +19,30 @@ const Nav = () => {
     window.location.href = url
   }
 
+  const navList = [
+    {
+      name: 'About',
+      link: 'about'
+    },
+    {
+      name: 'Project',
+      link: 'project'
+    },
+    {
+      name: 'Contact',
+      link: 'contact'
+    }
+  ]
+
   return (
     <S.NavContainer>
       <S.Logo src={moon} onClick={() => handleNavigate('/')} />
       <S.NavList>
-        <div onClick={() => handleNavigate('/')}>Home</div>
-        <div onClick={() => handleNavigate('/about')}>About</div>
-        <div onClick={() => handleNavigate('/project/0')}>Project</div>
-        <div onClick={() => handleNavigate('/contact')}>Contact</div>
+        {navList.map(nav => (
+          <Link to={nav.link} spy={true} activeClass="active" smooth={true}>
+            <div>{nav.name}</div>
+          </Link>
+        ))}
       </S.NavList>
       <S.Links>
         <span onClick={() => handleOpenLink('https://github.com/sena-22')}>

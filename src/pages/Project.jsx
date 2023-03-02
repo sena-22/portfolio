@@ -1,7 +1,6 @@
 import {useState, useEffect} from 'react'
 import {useParams, useNavigate} from 'react-router-dom'
 
-import Nav from '../components/Nav'
 import Modal from '../components/Modal'
 
 import * as S from './style'
@@ -72,7 +71,6 @@ const Project = () => {
 
   return (
     <S.ProjectContainer>
-      <Nav />
       <ProjectList currentData={currentData} />
       <button onClick={() => handleNavigate(projectId - 1)}>﹤</button>
       <button onClick={() => handleNavigate(projectId + 1)}>﹥</button>
