@@ -2,13 +2,7 @@ import styled from 'styled-components'
 
 /* About */
 
-export const AboutContainer = styled.div`
-  background-color: #292929;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  margin-left: 200px;
-`
+export const AboutContainer = styled.div``
 
 export const AboutMain = styled.div`
   box-sizing: border-box;
@@ -27,8 +21,6 @@ export const AboutLeftSection = styled.section`
   position: relative;
 
   > p {
-    top: 10%;
-    position: absolute;
     font: bold 24px 'Source Code Pro', monospace;
     color: #bb88ed;
   }
@@ -235,12 +227,7 @@ export const ProjectContainer = styled.div`
 /* Contact */
 
 export const ContactContainer = styled.div`
-  background-color: #292929;
-  width: 100%;
-  height: 100%;
   min-height: 800px;
-  box-sizing: border-box;
-  margin-left: 200px;
 `
 
 export const ContactMain = styled.div`
@@ -250,7 +237,7 @@ export const ContactMain = styled.div`
 
   > p {
     padding: 70px;
-    font: bold 20px 'Source Code Pro', monospace;
+    font: bold 24px 'Source Code Pro', monospace;
     color: #bb88ed;
   }
 

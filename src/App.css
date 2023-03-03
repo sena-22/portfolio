@@ -47,4 +47,6 @@ body {
   font: 17px/1.4 'IM_Hyemin-Bold';
   letter-spacing: 1px;
   color: #ddd;
+  overflow-x: hidden;
+  background-color: #292929;
 }

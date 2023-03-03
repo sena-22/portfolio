@@ -2,9 +2,8 @@ import styled from 'styled-components'
 
 /* Nav */
 export const NavContainer = styled.div`
-  width: 15%;
+  width: 200px;
   height: 100%;
-  background-color: #292929;
   display: flex;
   flex-direction: column;
   position: fixed;

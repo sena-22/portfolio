@@ -1,13 +1,24 @@
 import * as P from './index'
 import Nav from '../components/Nav'
 
+import styled from 'styled-components'
+
+const Layout = styled.div`
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin-left: 200px;
+`
+
 const Home = () => {
   return (
     <div id="home">
       <Nav />
-      <P.About />
-      <P.ProjectList />
-      <P.Contact />
+      <Layout>
+        <P.About />
+        <P.ProjectList />
+        <P.Contact />
+      </Layout>
     </div>
   )
 }
