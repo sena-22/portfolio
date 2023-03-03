@@ -21,15 +21,15 @@ const Nav = () => {
 
   const navList = [
     {
-      name: 'About',
+      name: '01. about',
       link: 'about'
     },
     {
-      name: 'Project',
+      name: '02. project',
       link: 'project'
     },
     {
-      name: 'Contact',
+      name: '03. contact',
       link: 'contact'
     }
   ]
@@ -39,7 +39,12 @@ const Nav = () => {
       <S.Logo src={moon} onClick={() => handleNavigate('/')} />
       <S.NavList>
         {navList.map(nav => (
-          <Link to={nav.link} spy={true} activeClass="active" smooth={true}>
+          <Link
+            key={nav.name}
+            to={nav.link}
+            spy={true}
+            activeClass="active"
+            smooth={true}>
             <div>{nav.name}</div>
           </Link>
         ))}

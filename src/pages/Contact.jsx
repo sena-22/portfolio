@@ -88,24 +88,27 @@ const Contact = () => {
   return (
     <S.ContactContainer id="contact">
       <S.ContactMain>
-        <h1>Contact me</h1>
+        <p>
+          <span>03.</span>
+          <span>contact</span>
+        </p>
         <div className="input">
-          <Input label="Name" type="text" name="name" value={name} onChange={onChange} />
+          <Input label="name" type="text" name="name" value={name} onChange={onChange} />
           <Input
-            label="Email"
+            label="email"
             type="text"
             name="email"
             value={email}
             onChange={onChange}
           />
           <Input
-            label="Subject"
+            label="subject"
             type="text"
             name="subject"
             value={subject}
             onChange={onChange}
           />
-          <label>Message</label>
+          <label>message</label>
           <textarea
             name="message"
             value={message}

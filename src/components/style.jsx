@@ -2,12 +2,13 @@ import styled from 'styled-components'
 
 /* Nav */
 export const NavContainer = styled.div`
-  width: 200px;
+  width: 15%;
   height: 100%;
   background-color: #292929;
   display: flex;
   flex-direction: column;
   position: fixed;
+  border-right: 0.5px solid rgba(255, 255, 255, 0.2);
 `
 
 export const Logo = styled.img`
@@ -22,10 +23,9 @@ export const NavList = styled.div`
 
   & div {
     color: #a6a6b2;
-    font-size: 29px;
-    font-weight: 600;
-    padding: 10px 0;
-    font-family: 'poor story';
+    font-size: 17px;
+    padding: 20px 0;
+    font-family: 'Nunito Sans';
     transition: all 0.5s;
 
     cursor: pointer;

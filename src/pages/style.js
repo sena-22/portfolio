@@ -7,13 +7,13 @@ export const AboutContainer = styled.div`
   width: 100%;
   height: 100%;
   box-sizing: border-box;
+  margin-left: 200px;
 `
 
 export const AboutMain = styled.div`
   box-sizing: border-box;
-  margin-left: 200px;
+
   position: relative;
-  border-left: 0.5px solid rgba(255, 255, 255, 0.2);
   display: flex;
   flex-direction: row;
   padding: 70px;
@@ -26,28 +26,11 @@ export const AboutLeftSection = styled.section`
   height: 100vh;
   position: relative;
 
-  > h1 {
-    font: bold 30px 'poor story';
-    color: #bb88ed;
-    position: absolute;
+  > p {
     top: 10%;
-  }
-
-  div {
     position: absolute;
-    top: 15%;
-
-    > h1 {
-      margin-top: 10px;
-    }
-  }
-
-  div:nth-of-type(2) {
-    position: absolute;
-    top: 25%;
-    font: 20px 'poor story';
-    padding: 20px 0;
-    letter-spacing: 2px;
+    font: bold 24px 'Source Code Pro', monospace;
+    color: #bb88ed;
   }
 `
 
@@ -75,9 +58,9 @@ export const AboutRightSection = styled.section`
       text-shadow: 0 0 10px #bb88ed;
     }
     > p {
-      font: 40px;
+      font: 20px;
       margin: 15px 0;
-      font: 25px 'poor story';
+      font: 25px 'Source Code Pro', monospace;
       text-align: center;
     }
   }
@@ -97,7 +80,7 @@ export const AboutRightSection = styled.section`
       > p {
         margin-bottom: 10px;
         text-align: center;
-        font: 25px 'poor story';
+        font: 17px 'Source Code Pro', monospace;
       }
 
       > .con {
@@ -130,7 +113,7 @@ export const AboutArticle = styled.article`
     display: flex;
     align-items: center;
     justify-content: center;
-    font: 20px 'poor story';
+    font: 15px 'Source Code Pro', monospace;
     color: #fff;
     border-radius: 3px;
     transition: 0.7s;
@@ -177,7 +160,7 @@ export const Inner = styled.div`
   }
 
   h2 {
-    font: bold 20px/1 'IM_Hyemin-Bold';
+    font: bold 18px/1 'Source Code Pro', monospace;
     color: #444;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -185,7 +168,7 @@ export const Inner = styled.div`
   }
 
   p {
-    font: 13px 'IM_Hyemin-Bold';
+    font: 13px 'Source Code Pro', monospace;
     color: #777;
     margin-bottom: 10px;
     text-align: center;
@@ -217,7 +200,7 @@ export const ProjectContainer = styled.div`
     border-radius: 50%;
     background-color: transparent;
     color: #ffffff;
-    font-size: 20px;
+    font-size: 18px;
     cursor: pointer;
 
     :hover {
@@ -239,7 +222,7 @@ export const ProjectContainer = styled.div`
     left: 90%;
     width: 100px;
     height: 100px;
-    font: 27px/1 'poor story';
+    font: 20px/1 'Source Code Pro', monospace;
     background-color: #ba88eda4;
     border-radius: 50%;
 
@@ -254,22 +237,21 @@ export const ProjectContainer = styled.div`
 export const ContactContainer = styled.div`
   background-color: #292929;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   min-height: 800px;
+  box-sizing: border-box;
+  margin-left: 200px;
 `
 
 export const ContactMain = styled.div`
-  margin-left: 200px;
   width: 100%;
   height: 100%;
   position: relative;
-  border-left: 0.5px solid rgba(255, 255, 255, 0.2);
 
-  > h1 {
-    font: bold 50px 'IM_Hyemin-Bold';
-    position: absolute;
-    top: 15%;
-    left: 20%;
+  > p {
+    padding: 70px;
+    font: bold 20px 'Source Code Pro', monospace;
+    color: #bb88ed;
   }
 
   .input {
@@ -277,13 +259,13 @@ export const ContactMain = styled.div`
     flex-direction: column;
     position: absolute;
     width: 50%;
-    top: 30%;
-    left: 20%;
-    font: bold 20px 'IM_Hyemin-Bold';
+    left: 10%;
+    font: bold 20px 'Source Code Pro', monospace;
   }
 
   .input label {
     margin-bottom: 5px;
+    font: 20px 'Source Code Pro', monospace;
   }
 
   .input input,
@@ -291,7 +273,7 @@ export const ContactMain = styled.div`
     box-sizing: border-box;
     width: 100%;
     padding: 10px;
-    font: bold 18px 'IM_Hyemin-Bold';
+    font: 16px 'Source Code Pro', monospace;
     background-color: #4d4c4c;
     color: #8d8d8d;
 
@@ -330,7 +312,7 @@ export const ContactMain = styled.div`
     background-color: transparent;
     color: #bb88ed;
     cursor: pointer;
-    font: 20px 'poor story';
+    font: 15px 'Source Code Pro', monospace;
     letter-spacing: 2px;
 
     :hover {
