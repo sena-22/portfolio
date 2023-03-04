@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 import {useParams, useNavigate} from 'react-router-dom'
 
 import Modal from '../components/Modal'
+import moon from '../img/moon.png'
 
 import * as S from './style'
 import * as D from '../data'
@@ -71,6 +72,7 @@ const Project = () => {
 
   return (
     <S.ProjectContainer>
+      <S.Logo src={moon} onClick={() => navigate('/')} />
       <ProjectList currentData={currentData} />
       <button onClick={() => handleNavigate(projectId - 1)}>﹤</button>
       <button onClick={() => handleNavigate(projectId + 1)}>﹥</button>

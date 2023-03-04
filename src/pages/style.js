@@ -5,20 +5,11 @@ import styled from 'styled-components'
 export const AboutContainer = styled.div``
 
 export const AboutMain = styled.div`
-  box-sizing: border-box;
-
   position: relative;
-  display: flex;
-  flex-direction: row;
-  padding: 70px;
-`
-
-export const AboutLeftSection = styled.section`
   display: flex;
   flex-direction: column;
-  width: 40%;
-  height: 100vh;
-  position: relative;
+  padding: 70px;
+  font-family: 'Source Code Pro', monospace;
 
   > p {
     font: bold 24px 'Source Code Pro', monospace;
@@ -26,101 +17,94 @@ export const AboutLeftSection = styled.section`
   }
 `
 
-export const AboutRightSection = styled.section`
+export const AboutTopSection = styled.section`
   display: flex;
-  flex-direction: column;
-  width: 60%;
-  height: 100vh;
+  flex-direction: row;
   position: relative;
-  margin-left: 50px;
-  box-sizing: border-box;
+  margin-top: 50px;
 
-  > div {
-    position: absolute;
-
-    :nth-of-type(1) {
-      top: 10%;
-    }
-
-    :nth-of-type(2) {
-      top: 40%;
-    }
-
-    :hover p {
-      text-shadow: 0 0 10px #bb88ed;
-    }
-    > p {
-      font: 20px;
-      margin: 15px 0;
-      font: 25px 'Source Code Pro', monospace;
-      text-align: center;
-    }
-  }
-
-  > div > .con {
+  .box {
+    width: 460px;
+    height: 260px;
+    background-color: #fff;
+    color: #000;
+    margin: 20px 30px 40px 0;
+    border-radius: 25px;
+    padding: 20px;
     display: flex;
-    flex-direction: row;
-  }
-
-  .article__bottom {
-    display: flex;
-
-    > div {
-      display: flex;
-      flex-direction: column;
-
-      > p {
-        margin-bottom: 10px;
-        text-align: center;
-        font: 17px 'Source Code Pro', monospace;
-      }
-
-      > .con {
-        display: flex;
-      }
-    }
-  }
-`
-
-export const AboutArticle = styled.article`
-  margin-right: 20px;
-  height: 100px;
-  width: 100px;
-  border-radius: 4px;
-  text-align: center;
-  position: relative;
-  transition: 0.4s;
-  transform-style: preserve-3d;
-
-  &:hover {
-    transform: rotateY(180deg);
-  }
-
-  .front,
-  .back {
-    width: 100%;
-    height: 100%;
-    padding: 3px;
-    position: absolute;
-    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    font: 15px 'Source Code Pro', monospace;
-    color: #fff;
-    border-radius: 3px;
-    transition: 0.7s;
-    backface-visibility: hidden;
   }
 
-  .front {
-    background-image: linear-gradient(to top, #a7a6cb 0%, #8989ba 52%, #8989ba 100%);
+  .box--title {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 50px;
   }
-  .back {
-    background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
-    transform: rotateY(180deg);
+
+  .box--content--channer {
+    font-size: 18px;
+
+    div {
+      margin-bottom: 60px;
+    }
+
+    div > span {
+      margin-right: 30px;
+    }
+
+    div > span:nth-child(2) {
+      cursor: pointer;
+      color: slateblue;
+      text-decoration: underline;
+    }
+  }
+
+  .box--content--education {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    > div:nth-child(1) {
+      font-size: 17px;
+      margin-bottom: 25px;
+      margin-top: 15px;
+    }
+
+    > div:nth-child(2) {
+      font-size: 19px;
+      margin-bottom: 20px;
+    }
   }
 `
+
+export const AboutBottomSection = styled.section`
+  display: flex;
+  font-size: 15px;
+
+  > div > span:nth-child(1) {
+    color: #bb88ed;
+  }
+
+  > div > span:nth-child(2) {
+    margin-left: 2px;
+    margin-right: 15px;
+    letter-spacing: normal;
+  }
+`
+
 /* Project - Article */
+
+export const Logo = styled.img`
+  width: 70px;
+  height: 70px;
+  margin-top: 50px;
+  margin-left: 65px;
+  margin-right: -100px;
+  cursor: pointer;
+  position: fixed;
+`
 
 export const ArticleContainer = styled.div`
   width: 50%;
@@ -128,6 +112,7 @@ export const ArticleContainer = styled.div`
   float: left;
   box-sizing: border-box;
   padding: 12px;
+  border-left: 0.5px solid rgba(255, 255, 255, 0.2);
 `
 
 export const Inner = styled.div`
@@ -215,7 +200,7 @@ export const ProjectContainer = styled.div`
     width: 100px;
     height: 100px;
     font: 20px/1 'Source Code Pro', monospace;
-    background-color: #ba88eda4;
+    background-color: #bb88ed;
     border-radius: 50%;
 
     :hover {
@@ -306,6 +291,89 @@ export const ContactMain = styled.div`
       background-image: linear-gradient(to left, #a18cd1 0%, #fbc2eb 100%);
       color: #ffffff;
       transition: all 0.5s;
+    }
+  }
+`
+/* ProjectList */
+
+export const ProjectListContainer = styled.div`
+  p,
+  section {
+    padding: 70px;
+    box-sizing: border-box;
+    width: 80%;
+  }
+
+  p {
+    font: bold 24px 'Source Code Pro', monospace;
+    color: #bb88ed;
+  }
+
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: end;
+
+    .left--section {
+      width: 70%;
+      height: 300px;
+      background-color: #bb88ed;
+      margin-right: 20px;
+      cursor: pointer;
+      > img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .right--section {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      font: 13px 'Source Code Pro', monospace;
+
+      > div {
+        margin: 10px 0;
+      }
+
+      > div:first-child {
+        color: #bb88ed;
+        font-size: 15px;
+      }
+
+      .title {
+        font: bold 25px 'Source Code Pro', monospace;
+        cursor: pointer;
+
+        :hover {
+          color: #bb88ed;
+        }
+      }
+
+      .desc {
+        padding: 25px 30px;
+        margin-left: -100px;
+        background-color: #605d64ec;
+        border-radius: 7px;
+        word-wrap: break-word;
+      }
+
+      .stacks {
+        font-size: 14px;
+        text-align: end;
+      }
+
+      .links {
+        > span {
+          cursor: pointer;
+          margin-left: 20px;
+          font-size: 17px;
+          :hover {
+            color: #bb88ed;
+          }
+        }
+      }
     }
   }
 `
