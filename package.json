@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sena-22.github.io/portfolio",
+  "homepage": "https://sena-22.github.io/portfolio/",
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
     "@fortawesome/fontawesome-svg-core": "^6.3.0",
